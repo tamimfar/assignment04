@@ -1,0 +1,608 @@
+{
+  "info": {
+    "_postman_id": "e5a759bd-f7b9-4eb9-8d59-8bd9c01d6add",
+    "name": "assignment4",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34053800"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"John Doe 3333\",\r\n  \"email\": \"johnadmin@example.com\",\r\n  \"password\": \"SecurePassword123!\",\r\n  \"role\": \"ADMIN\"  // 👈 এটি অবশ্যই বড় হাতের অক্ষরে (Enum অনুযায়ী) দিতে হবে\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/auth/register",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"johnadmin@example.com\",\r\n  \"password\": \"SecurePassword123!\"\r\n   \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/auth/login",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "me",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"john@example.com\",\r\n  \"password\": \"SecurePassword123!\"\r\n   \r\n}"
+            },
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/auth/me",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "landlord",
+      "item": [
+        {
+          "name": "createProperty",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Modern 2-Bedroom Apartment in Dhaka\",\r\n  \"description\": \"A beautiful and spacious apartment perfect for small families or working professionals. Close to public transport and supermarkets.\",\r\n  \"thumbnail\": \"https://example.com/images/apartment1.jpg\",\r\n  \"price\": 25000,\r\n  \"location\": \"Mirpur, Dhaka\",\r\n  \"bedrooms\": \"5\",\r\n  \"bathrooms\": \"2\",\r\n  \"area\": \"1200 sq ft\",\r\n  \"avilable\": true,\r\n  \"landlordId\": \"3aeade72-8610-440c-aae7-28fea4149d81\",\r\n  \"categoriesId\": \"23432432432\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/landlord/properties",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "landlord",
+                "properties"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updatedProperty",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Modern \",\r\n  \"description\": \"A beautiful and spacious apartment perfect for small families or working professionals. Close to public transport and supermarkets.\",\r\n  \"thumbnail\": \"https://example.com/images/apartment1.jpg\",\r\n  \"price\": 25000,\r\n  \"location\": \"Mirpur, Dhaka\",\r\n  \"bedrooms\": \"5\",\r\n  \"bathrooms\": \"10\",\r\n  \"area\": \"1200 sq ft\",\r\n  \"avilable\": false,\r\n  \"landlordId\": \"3aeade72-8610-440c-aae7-28fea4149d81\",\r\n  \"categoriesId\": \"23432432432\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/landlord/properties/3c835492-aa0f-4021-a9d9-a0d358bf153d",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "landlord",
+                "properties",
+                "3c835492-aa0f-4021-a9d9-a0d358bf153d"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deletProperty",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/landlord/properties/3c835492-aa0f-4021-a9d9-a0d358bf153d",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "landlord",
+                "properties",
+                "3c835492-aa0f-4021-a9d9-a0d358bf153d"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "landlordgetRequest",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/landlord/requests",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "landlord",
+                "requests"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateStatus",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\":\"APPROVED\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/landlord/requests/3366fd82-87cc-44c0-b5a9-6c0bac8a81e7",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "landlord",
+                "requests",
+                "3366fd82-87cc-44c0-b5a9-6c0bac8a81e7"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "property(public)",
+      "item": [
+        {
+          "name": "getAllProperty",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/properties",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "properties"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getPropertybyid",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/properties/84aa0d75-f26f-4d44-bdbf-fabca1ac29ec",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "properties",
+                "84aa0d75-f26f-4d44-bdbf-fabca1ac29ec"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getAllcategories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/categories",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "categories"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "rentalRequests",
+      "item": [
+        {
+          "name": "createRequest",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"propertieId\":\"d59ab6b8-a328-4d51-876b-2a65d34ba01f\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/rental",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "rental"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getRequest",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"propertieId\":\"a06d7989-10f9-4189-a6c8-97569775a309\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/rental",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "rental"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "payment",
+      "item": [
+        {
+          "name": "createPayment",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"rentalId\":\"3366fd82-87cc-44c0-b5a9-6c0bac8a81e7\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/payments/create",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "payments",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "confirmPayment",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n   \"transactionId\": \"pi_3TqtNqJthfsAPlgm048wTv0e\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/payments/confirm",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "payments",
+                "confirm"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "review",
+      "item": [
+        {
+          "name": "createReview",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"rating\": \"5\",\r\n  \"comment\": \"The property was amazing and the rental process was very smooth!\",\r\n  \"tenantId\": \"dae83d5f-efc3-4a3e-890f-11f5bbac2cdf\",\r\n  \"propertiesId\": \"a06d7989-10f9-4189-a6c8-97569775a309\",\r\n  \"transactionId\": \"pi_3TrBQWJthfsAPlgm1eiYdBY7\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/reviews",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "reviews"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "admin",
+      "item": [
+        {
+          "name": "getAllUser",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"rating\": \"5\",\r\n  \"comment\": \"The property was amazing and the rental process was very smooth!\",\r\n  \"tenantId\": \"dae83d5f-efc3-4a3e-890f-11f5bbac2cdf\",\r\n  \"propertiesId\": \"prop-990a-4b3e-890f-22f5ccac3eee\",\r\n  \"transactionId\": \"pi_3TrA8RJthfsAPlgm0nfUqR8y\"\r\n}"
+            },
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/admin/users",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getuserbyid",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"rating\": \"5\",\r\n  \"comment\": \"The property was amazing and the rental process was very smooth!\",\r\n  \"tenantId\": \"dae83d5f-efc3-4a3e-890f-11f5bbac2cdf\",\r\n  \"propertiesId\": \"prop-990a-4b3e-890f-22f5ccac3eee\",\r\n  \"transactionId\": \"pi_3TrA8RJthfsAPlgm0nfUqR8y\"\r\n}"
+            },
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/admin/users/dae83d5f-efc3-4a3e-890f-11f5bbac2cdf",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "users",
+                "dae83d5f-efc3-4a3e-890f-11f5bbac2cdf"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateUserStatus",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"status\": \"BAN\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/admin/users/dae83d5f-efc3-4a3e-890f-11f5bbac2cdf",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "users",
+                "dae83d5f-efc3-4a3e-890f-11f5bbac2cdf"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "allRental",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://assinment4-gamma.vercel.app/api/admin/rentals",
+              "protocol": "https",
+              "host": [
+                "assinment4-gamma",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "rentals"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
