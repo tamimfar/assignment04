@@ -106,7 +106,7 @@ export const confirmPayment = catchAsync(async (req: Request, res: Response) => 
 
 export const getMyPaymentHistory = catchAsync(async (req: Request, res: Response) => {
     const id = req.user?.id as string
-    const payments = await paymentService.getMyaAllPayment(id);
+    const payments = await paymentService.getMyAllPayment(id);
     sendResponse(res, {
         success: true,
         statusCode: 200,
@@ -122,7 +122,7 @@ export const getPaymentDetails = catchAsync(async (req: Request, res: Response) 
     sendResponse(res, {
         success: true,
         statusCode: 200,
-        message: "payment intent created successfully",
+        message: "payment history fetched successfully",
         data: payment
     })
 })

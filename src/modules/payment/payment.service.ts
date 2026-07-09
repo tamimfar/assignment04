@@ -133,7 +133,7 @@ const paymentConfarmation = async (transactionId: string) => {
 
 }
 
-const getMyaAllPayment = async (userId: string) => {
+const getMyAllPayment = async (userId: string) => {
     const payments = await prisma.payment.findMany({
         where: { userId: userId },
         include: {
@@ -162,7 +162,7 @@ const singlePayment = async (paymentId: string) => {
 const paymentService = {
     createPayment,
     paymentConfarmation,
-    getMyaAllPayment,
+    getMyAllPayment,
     singlePayment
 }
 
