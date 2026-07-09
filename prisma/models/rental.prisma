@@ -1,0 +1,13 @@
+model Rental {
+    id           String         @id @default(uuid())
+    status       RequestStatus? @default(PENDING)
+    tenantId     String
+    user         User           @relation(fields: [tenantId], references: [id])
+    propertieId  String
+    propertie    Propertie      @relation(fields: [propertieId], references: [id])
+    requestDate  DateTime       @default(now())
+    approvedDate DateTime?
+    payments     Payment[]
+
+    @@map("rentals")
+}

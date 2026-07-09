@@ -1,0 +1,17 @@
+model Payment {
+    id            String   @id @default(uuid())
+    amount        Float
+    currency      String   @default("BDT")
+    status        String // e.g., "PENDING", "COMPLETED", "FAILED"
+    transactionId String   @unique
+    gateway       String // "STRIPE" অথবা "SSLCOMMERZ"
+    createdAt     DateTime @default(now())
+
+    // Relations
+    userId          String
+    user            User   @relation(fields: [userId], references: [id])
+    rentalRequestId String
+    rentalRequest   Rental @relation(fields: [rentalRequestId], references: [id])
+
+    @@map("payments")
+}

@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    // File Layout
+    "outDir": "./dist",
+    "module": "esnext",
+    "target": "es2023",
+    "types": [
+      "node"
+    ],
+    "moduleResolution": "bundler",
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    // Recommended Options
+    "strict": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+  },
+  // "include": [
+  //   "src/**/*"
+  // ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "generated/prisma"
+  ]
+}
