@@ -1,6 +1,7 @@
 import cookieParser from "cookie-parser"
 import core from "cors"
-import express, { Application, Request, Response } from "express";
+import express, { Application, Request, Response, NextFunction } from "express";
+
 
 
 
@@ -11,6 +12,7 @@ import rentalRoute from "./modules/rentalRequests/rental.route";
 import paymentRoute from "./modules/payment/payment.route";
 import reviewRoute from "./modules/review/review.route";
 import adminRoute from "./modules/admin/admin.route";
+
 
 
 
@@ -37,11 +39,13 @@ app.use("/api/reviews", reviewRoute.router)
 app.use("/api/admin", adminRoute.router)
 
 
-app.use((err: any, req: Request, res: Response, next: any) => {
-    res.status(err.statusCode).json({
+app.use((err: any, req: Request, res: Response, next: NextFunction) => {
+    const statusCode = err.statusCode || 500;
+    const message = err.message || 'Something went wrong!';
+    res.status(statusCode).json({
         success: false,
-        message: err.message,
-        statusCode: err.statusCode,
+        message: message,
+        statusCode: statusCode,
         stack: err.stack
     })
 })
