@@ -28,7 +28,8 @@ const getUserByIdfromController = catchAsync(async (req: Request, res: Response,
 })
 const updateUserByIdfromController = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
     const userId = req.params.id as string
-    const user = await adminService.updeteUserStatus(userId, req.body)
+    const { status } = req.body
+    const user = await adminService.updeteUserStatus(userId, status)
     sendResponse(res, {
         success: true,
         statusCode: 200,
