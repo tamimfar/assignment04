@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsx watch src/server.ts",
-    "stripe:webhook": "stripe listen --forward-to localhost:4000/api/payments/webhook",
+    "stripe:webhook": "stripe listen --forward-to https://assinment4-gamma.vercel.app/api/payments/webhook",
     "build": "prisma generate && prisma migrate deploy && tsup",
     "start": "node dist/server.js"
   },
